@@ -1,0 +1,100 @@
+place::hotel room::A nondescript hotel room, location unknown.  Window blinds are drawn.  There is a closed bedside table next to yo\
+u with a landline telephone on top.
+
+command::open drawer::hotel room::hotel room open table
+
+place::hotel room open table::The same nondescript hotel room, now with the bedside table drawer open.  Inside is a phone book.
+
+object::phone book::A phone book in a foreign language with a page in the middle dog-eared.  When you open to it, a phone number is circled. Do you want to call the number or go to the lobby to ask someone about it?::hotel room open table
+
+object::phone::A phone that you found::hotel room open table
+
+command::go to lobby::hotel room open table::hotel lobby1
+
+place::hotel lobby1::The lobby outside the hotel room.  No one speaks your language. You are frustrated. Want to leave and go outsid\
+e?
+
+command::go outside::hotel lobby1::hotel street
+
+command::call number::hotel room open table::hotel room open table called number::phone book,phone
+
+place::hotel room open table called number::You called the number, and were spoken to in a language you don’t understand, but you se\
+em to recognize some words that sound like an address. Why not go outside to catch a taxi and go check out the address?
+
+command::go outside::hotel room open table called number::hotel street
+
+place::hotel street::You are outside the hotel on the street. There are a few taxis nearby.
+
+command::take taxi::hotel street::bar
+
+command::exit room::hotel room::hotel lobby
+
+place::hotel lobby::The lobby outside the hotel room.  Once again, very normal.  No clues as to where you might be.
+
+command::back inside::hotel lobby::hotel room
+
+command::walk outside::hotel lobby::outside hotel
+
+place::outside hotel::Outside the hotel, you see an empty car.  You look around, and the whole street is deserted.
+
+command::back inside::outside hotel::hotel lobby
+
+command::get in car::outside hotel::car::key
+
+command::walk down street::outside hotel::street
+
+place::car::An empty pale green 1998 Toyota Corolla.  Inside is a faint smell of marinated steak and old books.  You put the key in \
+the ignition and the car sputters to life.
+
+command::drive north::car::north
+
+place::north::You drive north, but go too fast and the police catch you!  Do you have your wallet with you?
+
+command::show wallet::north::go free::wallet
+
+command::no wallet::north::arrested
+
+place::go free::You showed the police your wallet and they let you go with a stern warning.  You drive off into the sunset, never ha\
+ving figured out your place in life.  Where are you?  Who are you?  How did you get here?  You will never know, and speed off into p\
+ure, blissful ignorance.
+
+command::i have truth::go free::understanding::truth
+
+place::understanding::You think more about what the bartender said, and suddenly it all makes sense to you!  Everything that you eve\
+r wondered about has become perfectly clear!  Life is a continuous circle, you realize.  Time is but an abstract model created by ma\
+n in order to describe the monotonous and circuitous cycle of mankind.  You laugh quietly to yourself, then everything slowly fades \
+to black.
+
+command::wake up::understanding::hotel room
+
+place::arrested::You don’t have any wallet to show to the police!  They arrest you, and you spend the rest of your life in maximum s\
+ecurity prison, never having figured out who you are, where you are, or how you got there.  You go crazy in jail, gradually growing \
+insane by your absolute ignorance to the truth of your situation, and die an old man.
+
+place::street::An empty street, still no one else in sight.
+
+command::back to hotel::street::outside hotel
+
+command::go to park::street::park
+
+command::go to bar::street::bar
+
+place::park::An empty park.  Lying on the ground, you find a key to a 1998 Toyota Corolla.
+
+object::key::A key to a 1998 Toyota Corolla.::park
+
+command::back to street::park::street
+
+place::bar::A bar that looks familiar upon entering.  You can’t quite put your finger on it, but something leads you to believe that you were here before…  Inside you find a wallet lying on the counter.  When you open it, you see the license and the picture looks exactly like you!
+
+object::wallet::A wallet that has what appears to be your license in it.  How mysterious.::bar
+
+command::back to street::bar::street
+
+command::talk to bartender::bar::bartender
+
+place::bartender::You:  “Excuse me, have I ever been here before?  I don’t really remember anything.”  Bartender:  “Yeah, you were here last night.  Let me leave you with this piece of advice…”
+
+object::truth::Advice from the bartender.  This is the most sacred piece of advice you have ever been given.  Treasure it.::bartender
+
+command::back to street::bartender::street
